@@ -1,4 +1,73 @@
-@mixin test1 {
-    background-color: red;
-    border: 1px solid black;
-}
+@import "vars";
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+
+
+@mixin font-style($family, $size, $color) {
+    font-family: $family;
+    font-size: $size;
+    color: $color;
+  }
+  
+  $game-font: 'Press Start 2P', 'Courier New', 'mono';
+  
+  @mixin regular-font($size, $color: $color-white) {
+    @include font-style($game-font, $size, $color);
+  }
+  
+  //
+  // text styles
+  %shadow-normal {
+    text-shadow:
+      3px 3px 0 #000,
+     -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+  }
+  
+  %shadow-light {
+    text-shadow:
+     -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+  }
+  
+  %title-shadow {
+    @extend %shadow-normal;
+    font-variant: small-caps;
+  }
+  
+  %header-text {
+    @include regular-font($header-size);
+    @extend %title-shadow;
+  }
+  
+  %normal-text {
+    @include regular-font($normal-size);
+    @extend %shadow-light;
+    letter-spacing: 3px;
+  }
+  
+  %small-text {
+    @include regular-font($small-size);
+    @extend %shadow-light;
+  }
+  
+  //
+  // panels
+  %panel-shadow {
+    border: 2px solid rgb(50, 50, 50);
+    border-radius: 2px;
+    box-shadow: 5px 5px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  %flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  %flex-row {
+    display: flex;
+    flex-direction: row;
+  }

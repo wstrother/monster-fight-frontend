@@ -1,0 +1,51 @@
+$dark-purple: #5a2db7;
+$orange: #bf6816;
+$hl-green: #08db21;
+$hl-blue: #08dbd7;
+$hl-red: #f71c11;
+
+$panel-color: rgba(50, 75, 88, 0.70);
+$header-color: $orange;
+
+$header-size: 20pt;
+$normal-size: 10pt;
+$small-size: 8.5pt;
+
+$life-10: $hl-green;
+$life-9: mix($hl-green, $hl-red, 90);
+$life-8: mix($hl-green, $hl-red, 80);
+$life-7: mix($hl-green, $hl-red, 70);
+$life-6: mix($hl-green, $hl-red, 60);
+$life-5: mix($hl-green, $hl-red, 50);
+$life-4: mix($hl-green, $hl-red, 40);
+$life-3: mix($hl-green, $hl-red, 30);
+$life-2: mix($hl-green, $hl-red, 20);
+$life-1: mix($hl-green, $hl-red, 10);
+$life-0: $hl-red;
+
+$color-white: white;
+.color-white {color: $color-white}
+
+$color-red: $hl-red;
+.color-red {color: $color-red}
+
+$color-green: $hl-green;
+.color-green {color: $color-green}
+
+$color-blue: rgb(50, 120, 255);
+.color-blue {color: $color-blue}
+
+$color-black: rgb(55, 55, 55);
+.color-black {color: $color-black}
+
+$color-yellow: yellow;
+.color-yellow {color: $color-yellow}
+
+$color-purple: $dark-purple;
+.color-purple {color: $color-purple}
+
+$color-brown: brown;
+.color-brown {color: $color-brown}
+
+$color-teal: $hl-blue;
+.color-teal {color: $color-teal}

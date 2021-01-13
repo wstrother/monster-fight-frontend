@@ -33,6 +33,11 @@
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/scss"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -127,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "monster-fight-frontend"
+  "defaultProject": "monster-fight-frontend",
+  "cli": {
+    "analytics": "4370238c-dec4-41fc-976f-830d5c401243"
+  }
 }

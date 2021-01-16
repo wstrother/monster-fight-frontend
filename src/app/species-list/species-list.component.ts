@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Specie } from '../models/specie';
+import { SpeciesService } from '../services/species.service';
+
 
 @Component({
   selector: 'app-species-list',
@@ -7,20 +9,15 @@ import { Specie } from '../models/specie';
   styleUrls: ['./species-list.component.scss']
 })
 export class SpeciesListComponent implements OnInit {
-  species: Specie[] = [
-    new Specie(1, "JOLLYGATOR", "BLUE"),
-    new Specie(2, "QUAILEAF", "GREEN"),
-    new Specie(3, "BLAZEBRA", "RED"),
-    {
-      name: "PSYCHOWL",
-      id: 4,
-      color: "PURPLE"
-    }
-  ];
+  species: Specie[] = [];
 
-  constructor() { }
+  constructor(private speciesService: SpeciesService) {
+   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.speciesService.getSpeciesList().subscribe(
+      (species: Specie[]) => {this.species = species;}
+    );
   }
 
 }

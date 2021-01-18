@@ -1,0 +1,5 @@
+<app-species-list-item 
+    *ngFor="let specie of species" 
+    [specie]="specie"
+    (pickSpecies)="raisePickSpecies(specie)"
+></app-species-list-item>

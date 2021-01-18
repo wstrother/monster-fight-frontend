@@ -9,13 +9,12 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class SpeciesService {
-  private apiUrl:String = 'http://localhost:5000/';
-  private speciesListUrl:String = 'species/all/';
+  private apiUrl: String = 'http://localhost:5000/species/';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getSpeciesList(): Observable<Specie[]> {
-    return this.http.get<Specie[]>(`${this.apiUrl}${this.speciesListUrl}`).pipe(
+    return this.http.get<Specie[]>(`${this.apiUrl}`).pipe(
       map(data => data.map(data => new Specie(data)))
     );
   }

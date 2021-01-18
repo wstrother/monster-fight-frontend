@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Specie } from '../models/specie';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Specie } from '../../models/specie';
+
 
 @Component({
   selector: 'app-species-list-item',
@@ -8,10 +9,14 @@ import { Specie } from '../models/specie';
 })
 export class SpeciesListItemComponent implements OnInit {
   @Input() specie!: Specie;
+  @Output() pickSpecies: EventEmitter<Specie> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onPickSpecies(specie: Specie) {
+    this.pickSpecies.emit(specie);
+  }
 }

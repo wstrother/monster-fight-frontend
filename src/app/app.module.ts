@@ -4,14 +4,18 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SpeciesListComponent } from './species-list/species-list.component';
-import { SpeciesListItemComponent } from './species-list-item/species-list-item.component';
+import { SpeciesListComponent } from './components/species-list/species-list.component';
+import { SpeciesListItemComponent } from './components/species-list-item/species-list-item.component';
+import { SpeciesStatDivComponent } from './components/species-stat-div/species-stat-div.component';
+import { MonsterDisplayComponent } from './components/monster-display/monster-display.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SpeciesListComponent,
-    SpeciesListItemComponent
+    SpeciesListItemComponent,
+    SpeciesStatDivComponent,
+    MonsterDisplayComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,80 @@
+@import 'mixins';
+@import 'vars';
+
+$dv-width: 35px;
+$dv-height: 10px;
+$stat-label-width: 95px;
+$meter-color: green;
+
+:host {
+    display: flex;
+    margin-bottom: 0.25em;
+}
+
+@mixin base-stat($name) {
+    &::before {
+        width: $stat-label-width;
+        content: $name;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 1em;
+        @extend %small-text;
+        text-transform: capitalize;
+    }
+}
+
+@mixin dv-meter($value) {
+    &::after {
+        height: $dv-height;
+        width: ($dv-width * $value) + 5;
+        background-color: $meter-color;
+        @extend %panel-shadow;
+        border: 3px double black;
+        border-radius: 3px;
+        content: '';
+    }
+}
+
+.base-life {
+    @include base-stat("life");
+}
+
+.base-energy {
+    @include base-stat("energy");
+}
+
+.base-defense {
+    @include base-stat("defense");
+}
+
+.base-special {
+    @include base-stat("special");
+}
+
+.species-base-stat {
+    display: flex;
+}
+
+.stat-dv-0 {
+    @include dv-meter(0);
+}
+
+.stat-dv-1 {
+    @include dv-meter(1);
+}
+
+.stat-dv-2 {
+    @include dv-meter(2);
+}
+
+.stat-dv-3 {
+    @include dv-meter(3);
+}
+
+.stat-dv-4 {
+    @include dv-meter(4);
+}
+
+.stat-dv-5 {
+    @include dv-meter(5);
+}

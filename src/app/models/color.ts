@@ -5,8 +5,5 @@ export class Color {
     constructor(data: any) {
         this.id = data.id;
         this.name = data.name;
-
-        console.log(this);
-        return this
     }
 }

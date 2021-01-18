@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Specie } from '../../models/specie';
+import { Monster } from '../../models/monster'; 
 import { MonApiService } from '../../services/mon-api.service';
 import { CharCreatorService } from '../../services/char-creator.service';
 
@@ -19,15 +20,12 @@ export class SpeciesListComponent implements OnInit {
     this.monApi.getSpeciesList().subscribe(
       (species: Specie[]) => {this.species = species;}
     );
-
-    // this.charCreator.getMessage().subscribe(
-    //   msg => console.log(`RECEIVED FUCKING MESSAGE ${msg}`)
-    // )
   }
 
   raisePickSpecies(specie: Specie) {
-    console.log("sending message...");
-    this.charCreator.sendMessage("This message has been sent through charCreator");
+    this.monApi.getMonster(specie.id).subscribe(
+      (mon: Monster) => {this.charCreator.setMonster(mon);}
+    );
   }
 
 }

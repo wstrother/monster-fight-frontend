@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Monster } from '../../models/monster';
 import { CharCreatorService } from '../../services/char-creator.service';
-import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -15,9 +14,9 @@ export class MonsterDisplayComponent implements OnInit {
   constructor(private charCreator: CharCreatorService) {}
 
   ngOnInit() {
-    this.charCreator.getMessage().subscribe(
-      msg => console.log(`RECEIVED FUCKING MESSAGE ${msg}`)
-    )
+    this.charCreator.getCurrentMon().subscribe(
+      (mon: Monster) => {this.monster = mon;}
+    );
   }
 
 }

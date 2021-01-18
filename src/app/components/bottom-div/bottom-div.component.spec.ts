@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MonsterDisplayComponent } from './monster-display.component';
+import { BottomDivComponent } from './bottom-div.component';
 
-describe('MonsterDisplayComponent', () => {
-  let component: MonsterDisplayComponent;
-  let fixture: ComponentFixture<MonsterDisplayComponent>;
+describe('BottomDivComponent', () => {
+  let component: BottomDivComponent;
+  let fixture: ComponentFixture<BottomDivComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MonsterDisplayComponent ]
+      declarations: [ BottomDivComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MonsterDisplayComponent);
+    fixture = TestBed.createComponent(BottomDivComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

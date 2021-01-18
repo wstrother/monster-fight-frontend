@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SpeciesListItemComponent } from './species-list-item.component';
+import { TopDivComponent } from './top-div.component';
 
-describe('SpeciesListItemComponent', () => {
-  let component: SpeciesListItemComponent;
-  let fixture: ComponentFixture<SpeciesListItemComponent>;
+describe('TopDivComponent', () => {
+  let component: TopDivComponent;
+  let fixture: ComponentFixture<TopDivComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SpeciesListItemComponent ]
+      declarations: [ TopDivComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SpeciesListItemComponent);
+    fixture = TestBed.createComponent(TopDivComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

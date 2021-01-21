@@ -1,6 +1,13 @@
+@import 'vars';
+@import 'mixins';
+
 :host {
     background-color: gray;
     padding: 1em;
     display: flex;
     flex-direction: column;
+}
+
+.explainer {
+    @extend %header-text;
 }

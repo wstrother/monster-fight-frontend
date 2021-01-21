@@ -3,6 +3,10 @@
 
 :host {
     width: 30%;
+
+    &.clickable:hover {
+        .species-name {color: yellow;}
+    }
 }
 
 .species-div {
@@ -11,10 +15,6 @@
     flex-direction: column;
     @extend %panel-shadow;
     margin-bottom: 1em;
-
-    &:hover>.species-name {
-        color: yellow;
-    }
 }
 
 .species-name {

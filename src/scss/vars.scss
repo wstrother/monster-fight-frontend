@@ -22,6 +22,8 @@ $life-2: mix($hl-green, $hl-red, 20);
 $life-1: mix($hl-green, $hl-red, 10);
 $life-0: $hl-red;
 
+//
+// colors
 $color-white: white;
 .color-white {color: $color-white}
 
@@ -48,3 +50,10 @@ $color-brown: brown;
 
 $color-teal: $hl-blue;
 .color-teal {color: $color-teal}
+
+//
+// stats
+$dv-width: 35px;
+$dv-height: 10px;
+$stat-label-width: 95px;
+$meter-color: green;

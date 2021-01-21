@@ -13,6 +13,7 @@ export class CharCreatorService {
   setMonster(mon: Monster): void {
     console.log("setMonster()");
     console.log(mon);
+    console.log(mon.life);
     this.subject.next(mon);
   }
 

@@ -9,6 +9,15 @@ export class Monster {
     constructor(data: any) {
         this.specie = new Specie(data.species);
         this.stats = data.stats.map((s: any) => new Stat(s))
+        this.adjustStats();
+    }
+
+    // apply base species stat values
+    adjustStats(): void {
+        this.life.base += this.specie.life;
+        this.energy.base += this.specie.energy
+        this.defense.base += this.specie.defense
+        this.special.base += this.specie.special
     }
 
     get life(): Stat {

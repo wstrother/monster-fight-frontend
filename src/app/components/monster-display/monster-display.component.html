@@ -1,3 +1,12 @@
 <div *ngIf="monster">
-    {{ monster.specie.name }}
+    <app-species-div
+        [specie]="monster.specie"
+        [stats]="{
+            life: monster.life.base,
+            energy: monster.energy.base,
+            defense: monster.defense.base,
+            special: monster.special.base
+        }"
+    >
+    </app-species-div>
 </div>

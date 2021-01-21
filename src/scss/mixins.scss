@@ -71,3 +71,36 @@
     display: flex;
     flex-direction: row;
   }
+
+  //
+  // stats
+  @mixin base-stat($name) {
+    &::before {
+        width: $stat-label-width;
+        content: $name;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 1em;
+        @extend %small-text;
+        text-transform: capitalize;
+    }
+}
+
+@mixin dv-meter($value) {
+    &::after {
+        height: $dv-height;
+        width: ($dv-width * $value) + 5;
+        background-color: $meter-color;
+        @extend %panel-shadow;
+        border: 3px double black;
+        border-radius: 3px;
+        content: '';
+    }
+}
+
+$dv-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+@each $dv-value in $dv-values {
+    .stat-dv-#{$dv-value} {
+        @include dv-meter($dv-value);
+    }
+}

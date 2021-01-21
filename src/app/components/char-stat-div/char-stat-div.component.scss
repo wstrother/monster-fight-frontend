@@ -6,25 +6,27 @@
     margin-bottom: 0.25em;
 }
 
-.base-life {
+.char-stat-life {
     @include base-stat("life");
 }
 
-.base-energy {
+.char-stat-energy {
     @include base-stat("energy");
 }
 
-.base-defense {
+.char-stat-defense {
     @include base-stat("defense");
 }
 
-.base-special {
+.char-stat-special {
     @include base-stat("special");
 }
 
-.species-base-stat {
+.char-stat {
     display: flex;
 }
+
+
 
 // .stat-dv-0 {
 //     @include dv-meter(0);

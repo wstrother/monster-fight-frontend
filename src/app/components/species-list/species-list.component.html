@@ -1,5 +1,11 @@
-<app-species-list-item 
+<app-species-div
     *ngFor="let specie of species" 
     [specie]="specie"
-    (pickSpecies)="raisePickSpecies(specie)"
-></app-species-list-item>
+    [stats]="{
+        life: specie.life,
+        energy: specie.energy,
+        defense: specie.defense,
+        special: specie.special
+    }"
+    (click)="raisePickSpecies(specie)"
+></app-species-div>

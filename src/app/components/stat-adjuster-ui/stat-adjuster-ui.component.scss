@@ -1,0 +1,30 @@
+@import 'vars';
+@import 'mixins';
+
+:host {
+    @extend %flex-row;
+    margin: 0.25em;
+    align-items: center;
+
+    app-species-stat-div {
+        transform: translateY(2px);
+    }
+}
+
+.ui-button {
+    @extend %panel-shadow;
+    @extend %small-text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+    width: 20px;
+    height: 20px;
+    border-radius: 20%;
+    margin: 5px;
+    -webkit-user-select: none;
+
+    &:hover {
+        color: yellow;
+    }
+}

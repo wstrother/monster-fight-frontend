@@ -4,6 +4,8 @@
 :host {
     display: flex;
     margin-bottom: 0.25em;
+    align-items: center;
+    height: 20px;
 }
 
 .base-life {
@@ -25,27 +27,3 @@
 .species-base-stat {
     display: flex;
 }
-
-// .stat-dv-0 {
-//     @include dv-meter(0);
-// }
-
-// .stat-dv-1 {
-//     @include dv-meter(1);
-// }
-
-// .stat-dv-2 {
-//     @include dv-meter(2);
-// }
-
-// .stat-dv-3 {
-//     @include dv-meter(3);
-// }
-
-// .stat-dv-4 {
-//     @include dv-meter(4);
-// }
-
-// .stat-dv-5 {
-//     @include dv-meter(5);
-// }

@@ -8,6 +8,8 @@ import { SpeciesListComponent } from './components/species-list/species-list.com
 import { SpeciesStatDivComponent } from './components/species-stat-div/species-stat-div.component';
 import { MonsterDisplayComponent } from './components/monster-display/monster-display.component';
 import { SpeciesDivComponent } from './components/species-div/species-div.component';
+import { StatAdjusterComponent } from './components/stat-adjuster/stat-adjuster.component';
+import { StatAdjusterUiComponent } from './components/stat-adjuster-ui/stat-adjuster-ui.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { SpeciesDivComponent } from './components/species-div/species-div.compon
     SpeciesListComponent,
     SpeciesStatDivComponent,
     MonsterDisplayComponent,
-    SpeciesDivComponent
+    SpeciesDivComponent,
+    StatAdjusterComponent,
+    StatAdjusterUiComponent
   ],
   imports: [
     BrowserModule,

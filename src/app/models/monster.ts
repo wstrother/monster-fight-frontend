@@ -14,26 +14,30 @@ export class Monster {
 
     // apply base species stat values
     adjustStats(): void {
-        this.life.base += this.specie.life;
-        this.energy.base += this.specie.energy
-        this.defense.base += this.specie.defense
-        this.special.base += this.specie.special
+        this.life.dv += this.specie.life;
+        this.energy.dv += this.specie.energy
+        this.defense.dv += this.specie.defense
+        this.special.dv += this.specie.special
+    }
+
+    getStat(name: string): Stat {
+        return this.stats.filter((s: Stat) => s.name == name.toUpperCase())[0];
     }
 
     get life(): Stat {
-        return this.stats.filter((s: Stat) => s.name == "LIFE")[0];
+        return this.getStat("life");
     }
 
     get energy(): Stat {
-        return this.stats.filter((s: Stat) => s.name == "ENERGY")[0];
+        return this.getStat("energy");
     }
 
     get defense(): Stat {
-        return this.stats.filter((s: Stat) => s.name == "DEFENSE")[0];
+        return this.getStat("defense");
     }
 
     get special(): Stat {
-        return this.stats.filter((s: Stat) => s.name == "SPECIAL")[0];
+        return this.getStat("special");
     }
 
     get color(): Color {

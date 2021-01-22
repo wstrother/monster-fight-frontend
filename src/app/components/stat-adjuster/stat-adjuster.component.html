@@ -1,0 +1,11 @@
+<h1>Adjust Stats</h1>
+<div class="dv-total stat-dv-{{ dvTotal }}"></div>
+
+<div class="stats-ui"  *ngIf="monster">
+    <app-stat-adjuster-ui
+        *ngFor="let stat of monster.stats"
+        [statName]="stat.name"
+        [monster]="monster"
+        (statChange)="changeStat($event)"
+    ></app-stat-adjuster-ui>
+</div>

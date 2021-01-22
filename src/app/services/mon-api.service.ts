@@ -13,6 +13,7 @@ export class MonApiService {
   private baseApiUrl: String = 'http://localhost:5000/';
   private speciesEnd: string = 'species/';
   private monsterEnd: string = 'monster/';
+  private newCharEnd: string = 'new_character/';
 
   // methods for the 'getSpeciesList' API call
   getSpeciesListUrl(): string {
@@ -33,6 +34,17 @@ export class MonApiService {
   getMonster(id: number): Observable<Monster> {
     return this.http.get<Monster>(this.getMonsterUrl(id)).pipe(
       map(data => new Monster(data))
+    );
+  }
+
+  // methods for the 'newCharacter' API call
+  getNewCharUrl(): string {
+    return `${this.baseApiUrl}${this.newCharEnd}`;
+  }
+
+  getNewCharData(): any {
+    return this.http.get<any>(this.getNewCharUrl()).pipe(
+      map(data => data)
     );
   }
 

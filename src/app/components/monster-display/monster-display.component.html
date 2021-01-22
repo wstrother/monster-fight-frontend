@@ -2,11 +2,13 @@
     <app-species-div
         [specie]="monster.specie"
         [stats]="{
-            life: monster.life.base,
-            energy: monster.energy.base,
-            defense: monster.defense.base,
-            special: monster.special.base
+            life: monster.life.dv,
+            energy: monster.energy.dv,
+            defense: monster.defense.dv,
+            special: monster.special.dv
         }"
     >
     </app-species-div>
+
+    <app-stat-adjuster [monster]="monster"></app-stat-adjuster>
 </div>

@@ -1,0 +1,6 @@
+<div class="ui-button" (click)="lowerStat()">-</div>
+<div class="ui-button" (click)="raiseStat()">+</div>
+<app-species-stat-div *ngIf="monster"
+    [value]="monster.getStat(statName).charDv"
+    [name]="statName.toLowerCase()"
+></app-species-stat-div>

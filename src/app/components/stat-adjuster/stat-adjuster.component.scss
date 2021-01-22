@@ -1,0 +1,20 @@
+@import 'vars';
+@import 'mixins';
+
+:host {
+    @extend %flex-column;
+    @extend %panel-shadow;
+}
+
+h1 {
+    @extend %header-text;
+}
+
+.stats-ui {
+    @extend %flex-column;
+}
+
+.dv-total {
+    display: flex;
+    @include base-stat("Points");
+}

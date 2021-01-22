@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Monster } from '../../models/monster';
 import { CharCreatorService } from '../../services/char-creator.service';
+import { MonApiService } from '../../services/mon-api.service';
 
 
 @Component({
@@ -11,12 +12,20 @@ import { CharCreatorService } from '../../services/char-creator.service';
 export class MonsterDisplayComponent implements OnInit {
   monster?: Monster;
 
-  constructor(private charCreator: CharCreatorService) {}
+  constructor(private charCreator: CharCreatorService, private monApi: MonApiService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.charCreator.getCurrentMon().subscribe(
-      (mon: Monster) => {this.monster = mon;}
+      (mon: Monster) => {
+        this.monster = mon;
+      }
     );
+
+    this.monApi.getNewCharData().subscribe(
+      (data: any) => {
+        this.charCreator.setDvMax(data.dv_max);
+      }
+    )
   }
 
 }

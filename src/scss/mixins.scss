@@ -58,8 +58,17 @@ $game-font: 'Press Start 2P', 'Courier New', 'mono';
 // panels
 %panel-shadow {
   border: 2px solid rgb(50, 50, 50);
-  border-radius: 2px;
+  border-radius: 5px;
   box-shadow: 5px 5px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+%panel-highlight {
+  background-color: $hl-brighten;
+  border-radius: 5px;
+}
+
+%panel-padding {
+  padding: 0.25rem;
 }
 
 %flex-column {
@@ -67,10 +76,23 @@ $game-font: 'Press Start 2P', 'Courier New', 'mono';
   flex-direction: column;
 }
 
+@mixin margin-between($size) {
+    &>*:not(:last-child) {
+      margin-bottom: $size;
+  }
+}
+
 %flex-row {
   display: flex;
   flex-direction: row;
 }
+
+%panel-main {
+  background-color: $panel-color;
+  @extend %panel-shadow;
+  @extend %panel-padding;
+}
+
 
 //
 // stats
@@ -104,4 +126,33 @@ $dv-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15;
     .stat-dv-#{$dv-value} {
         @include dv-meter($dv-value);
     }
+}
+
+
+// ui
+
+%ui-highlight {
+  &:hover {
+    color: $hl-color;
+  }
+}
+
+%ui-link {
+  text-decoration: none;
+  text-transform: capitalize;
+  @extend %small-text;
+  @extend %ui-highlight;
+}
+
+@mixin small-button($size) {
+  @extend %panel-shadow;
+  @extend %small-text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  width: $size;
+  height: $size;
+  border-radius: 20%;
+  -webkit-user-select: none;
 }

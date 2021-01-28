@@ -3,6 +3,8 @@ import { Specie } from '../../models/specie';
 import { Monster } from '../../models/monster'; 
 import { MonApiService } from '../../services/mon-api.service';
 import { CharCreatorService } from '../../services/char-creator.service';
+import { Move } from 'src/app/models/move';
+import { MovePool } from 'src/app/models/move-pool';
 
 
 @Component({
@@ -22,9 +24,17 @@ export class SpeciesListComponent implements OnInit {
     );
   }
 
-  raisePickSpecies(specie: Specie) {
+  pickSpecies(specie: Specie) {
     this.monApi.getMonster(specie.id).subscribe(
       (mon: Monster) => {this.charCreator.setMonster(mon);}
+    );
+    
+    this.monApi.getSpeciesMoves(specie.id).subscribe(
+      (moves: Move[]) => {this.charCreator.setSpecMoves(moves);}
+    );
+
+    this.monApi.getMovePool(specie.id).subscribe(
+      (pool: MovePool) => {this.charCreator.setMovePool(pool)}
     );
   }
 

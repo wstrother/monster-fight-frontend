@@ -1,4 +1,9 @@
 :host {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    width: 95%;
+
+    &>* {
+        width: 25%;
+    }
 }

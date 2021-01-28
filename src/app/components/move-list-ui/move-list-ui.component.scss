@@ -1,0 +1,11 @@
+@import 'vars';
+@import 'mixins';
+
+:host {
+    @extend %flex-column;
+    @include margin-between(0.5rem);
+
+    &>*:hover {
+        background-color: $hl-brighten;
+    }
+}

@@ -1,0 +1,24 @@
+<div class="moves-list-panel" *ngIf="moves.length > 0; else noMoves">
+    <h2>Current Move Set</h2>
+    <app-move-div
+        *ngFor="let move of moves"
+        [move]="move"
+        [hidden]="!move"
+    ></app-move-div>
+</div>
+
+<div class="move-pool-panel" *ngIf="movePool">
+    <h2>Slot 1</h2>
+    <app-move-list-ui [moves]="movePool.slot1"
+        (onPickMove)="setMove($event, 1)"
+    ></app-move-list-ui>
+
+    <h2>Slot 2</h2>
+    <app-move-list-ui [moves]="movePool.slot2"
+        (onPickMove)="setMove($event, 2)"
+    ></app-move-list-ui>
+</div>
+
+<ng-template #noMoves>
+    <p>Select your monster's species first...</p>
+</ng-template>

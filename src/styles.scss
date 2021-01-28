@@ -1,0 +1,14 @@
+@import 'mixins';
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgray;
+}
+
+h1 {
+    @extend %header-text;
+}
+
+h2 {
+    @extend %normal-text;
+}

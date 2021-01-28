@@ -1,0 +1,10 @@
+@import 'mixins';
+@import 'vars';
+
+:host {
+    @include small-button(20px);
+}
+
+.die-value {
+    @extend %small-text;
+}

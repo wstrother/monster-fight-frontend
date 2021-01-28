@@ -2,12 +2,8 @@
 @import 'mixins';
 
 :host {
+    @extend %panel-main;
     @extend %flex-column;
-    @extend %panel-shadow;
-}
-
-h1 {
-    @extend %header-text;
 }
 
 .stats-ui {

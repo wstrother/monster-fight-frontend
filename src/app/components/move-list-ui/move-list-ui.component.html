@@ -1,0 +1,5 @@
+<app-move-div 
+    *ngFor="let move of moves" 
+    [move]="move"
+    (click)="pickMove(move)"
+></app-move-div>

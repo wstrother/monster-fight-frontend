@@ -2,19 +2,12 @@
 @import 'vars';
 
 :host {
-    width: 30%;
+    @extend %flex-column;
+    @extend %panel-main;
 
     &.clickable:hover {
-        .species-name {color: yellow;}
+        .species-name {color: $hl-color;}
     }
-}
-
-.species-div {
-    padding: 0.25em;
-    display: flex;
-    flex-direction: column;
-    @extend %panel-shadow;
-    margin-bottom: 1em;
 }
 
 .species-name {

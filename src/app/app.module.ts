@@ -10,6 +10,15 @@ import { MonsterDisplayComponent } from './components/monster-display/monster-di
 import { SpeciesDivComponent } from './components/species-div/species-div.component';
 import { StatAdjusterComponent } from './components/stat-adjuster/stat-adjuster.component';
 import { StatAdjusterUiComponent } from './components/stat-adjuster-ui/stat-adjuster-ui.component';
+import { MoveDivComponent } from './components/move-div/move-div.component';
+import { DieDivComponent } from './components/die-div/die-div.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NavbarComponent } from './pages/navbar/navbar.component';
+import { SpeciesComponent } from './pages/species/species.component';
+import { StatsComponent } from './pages/stats/stats.component';
+import { MovesComponent } from './pages/moves/moves.component';
+import { MovesListComponent } from './components/moves-list/moves-list.component';
+import { MoveListUiComponent } from './components/move-list-ui/move-list-ui.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +28,16 @@ import { StatAdjusterUiComponent } from './components/stat-adjuster-ui/stat-adju
     MonsterDisplayComponent,
     SpeciesDivComponent,
     StatAdjusterComponent,
-    StatAdjusterUiComponent
+    StatAdjusterUiComponent,
+    MoveDivComponent,
+    DieDivComponent,
+    HomeComponent,
+    NavbarComponent,
+    SpeciesComponent,
+    StatsComponent,
+    MovesComponent,
+    MovesListComponent,
+    MoveListUiComponent
   ],
   imports: [
     BrowserModule,

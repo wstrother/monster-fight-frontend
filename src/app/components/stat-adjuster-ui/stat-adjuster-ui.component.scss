@@ -12,19 +12,11 @@
 }
 
 .ui-button {
-    @extend %panel-shadow;
-    @extend %small-text;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: default;
-    width: 20px;
-    height: 20px;
-    border-radius: 20%;
+    @include small-button(20px);
     margin: 5px;
-    -webkit-user-select: none;
 
     &:hover {
-        color: yellow;
+        color: $hl-color;
+        background-color: $hl-brighten;
     }
 }

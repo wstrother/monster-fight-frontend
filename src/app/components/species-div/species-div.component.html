@@ -1,11 +1,9 @@
-<div class="species-div">
-    <div class="species-name">{{ specie.name }}</div>
-    <div class="species-id">{{ specie.id }}</div>
-    <div class="species-color" [ngClass]="'color-'+specie.color.name.toLowerCase()">{{ specie.color.name }}</div>
-    <div class="species-base-stats-panel">
-        <app-species-stat-div [value]="stats.life" name="life"></app-species-stat-div>
-        <app-species-stat-div [value]="stats.energy" name="energy"></app-species-stat-div>
-        <app-species-stat-div [value]="stats.defense" name="defense"></app-species-stat-div>
-        <app-species-stat-div [value]="stats.special" name="special"></app-species-stat-div>
-    </div>
+<div class="species-name">{{ specie.name }}</div>
+<div class="species-id">{{ specie.id }}</div>
+<div [ngClass]="'species-color color-'+specie.color.name.toLowerCase()">{{ specie.color.name }}</div>
+<div class="species-base-stats-panel">
+    <app-species-stat-div [value]="stats.life" name="life"></app-species-stat-div>
+    <app-species-stat-div [value]="stats.energy" name="energy"></app-species-stat-div>
+    <app-species-stat-div [value]="stats.defense" name="defense"></app-species-stat-div>
+    <app-species-stat-div [value]="stats.special" name="special"></app-species-stat-div>
 </div>

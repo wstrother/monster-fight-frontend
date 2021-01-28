@@ -1,0 +1,20 @@
+@import 'mixins';
+@import 'vars';
+
+:host {
+    @extend %panel-main;
+    @extend %flex-column;
+}
+
+.move-name {
+    @extend %normal-text;
+    text-transform: capitalize;
+}
+
+.move-dice {
+    @extend %flex-row;
+
+    &>* {
+        margin:0.25rem;
+    }
+}

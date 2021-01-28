@@ -1,3 +1,5 @@
+<p *ngIf="species.length == 0">Fetching species list...</p>
+
 <app-species-div class="clickable"
     *ngFor="let specie of species" 
     [specie]="specie"
@@ -7,5 +9,5 @@
         defense: specie.defense,
         special: specie.special
     }"
-    (click)="raisePickSpecies(specie)"
+    (click)="pickSpecies(specie)"
 ></app-species-div>

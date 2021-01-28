@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Monster } from '../models/monster';
 import { Specie } from '../models/specie';
+import { Move } from '../models/move';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { MovePool } from '../models/move-pool';
 
 
 @Injectable({
@@ -14,6 +16,7 @@ export class MonApiService {
   private speciesEnd: string = 'species/';
   private monsterEnd: string = 'monster/';
   private newCharEnd: string = 'new_character/';
+  private movesEnd: string = 'moves/';
 
   // methods for the 'getSpeciesList' API call
   getSpeciesListUrl(): string {
@@ -42,9 +45,30 @@ export class MonApiService {
     return `${this.baseApiUrl}${this.newCharEnd}`;
   }
 
-  getNewCharData(): any {
+  getNewCharData(): Observable<any> {
     return this.http.get<any>(this.getNewCharUrl()).pipe(
       map(data => data)
+    );
+  }
+
+  getMovePool(id: number): Observable<MovePool> {
+    let url = `${this.getNewCharUrl()}?move_pool=${id}`;
+    return this.http.get<any>(url).pipe(
+      map(data => {
+        console.log(data);
+        return new MovePool(data)
+      })
+    );
+  }
+
+  // methods for the 'moves' API call
+  getMovesUrl(id: number): string {
+    return `${this.baseApiUrl}${this.movesEnd}?species=${id}`;
+  }
+
+  getSpeciesMoves(id: number): Observable<Move[]> {
+    return this.http.get<Move[]>(this.getMovesUrl(id)).pipe(
+      map(data => data.map(data => new Move(data)))
     );
   }
 

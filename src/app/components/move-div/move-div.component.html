@@ -1,0 +1,4 @@
+<div *ngIf="move" [ngClass]="'move-name color-'+move.color.name.toLowerCase()">{{ move.name }}</div>
+<div class="move-dice" *ngIf="move">
+    <app-die-div *ngFor="let die of move.dice" [die]="die"></app-die-div>
+</div>

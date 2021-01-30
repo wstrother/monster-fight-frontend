@@ -55,7 +55,6 @@ export class MonApiService {
     let url = `${this.getNewCharUrl()}?move_pool=${id}`;
     return this.http.get<any>(url).pipe(
       map(data => {
-        console.log(data);
         return new MovePool(data)
       })
     );

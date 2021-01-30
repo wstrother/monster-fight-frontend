@@ -19,6 +19,7 @@ import { StatsComponent } from './pages/stats/stats.component';
 import { MovesComponent } from './pages/moves/moves.component';
 import { MovesListComponent } from './components/moves-list/moves-list.component';
 import { MoveListUiComponent } from './components/move-list-ui/move-list-ui.component';
+import { MovesAdjusterComponent } from './components/moves-adjuster/moves-adjuster.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MoveListUiComponent } from './components/move-list-ui/move-list-ui.comp
     StatsComponent,
     MovesComponent,
     MovesListComponent,
-    MoveListUiComponent
+    MoveListUiComponent,
+    MovesAdjusterComponent
   ],
   imports: [
     BrowserModule,

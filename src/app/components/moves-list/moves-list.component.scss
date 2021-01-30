@@ -3,17 +3,10 @@
 
 :host {
     @extend %panel-main;
-    @extend %flex-row;
-
-    &>* {
-        flex-grow: 1;
-    }
-}
-
-.moves-list-panel {
     @extend %flex-column;
     @include margin-between(0.5rem);
 }
+
 
 .move-pool-panel {
     @extend %flex-column;

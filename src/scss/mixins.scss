@@ -98,11 +98,7 @@ $game-font: 'Press Start 2P', 'Courier New', 'mono';
 // stats
 @mixin base-stat($name) {
   &::before {
-      width: $stat-label-width;
       content: $name;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
       margin-right: 1em;
       @extend %small-text;
       text-transform: capitalize;

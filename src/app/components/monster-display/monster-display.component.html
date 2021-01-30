@@ -1,4 +1,4 @@
-<!-- <app-species-div *ngIf="monster"
+<app-species-div *ngIf="monster"
     [specie]="monster.specie"
     [stats]="{
         life: monster.life.dv,
@@ -9,12 +9,6 @@
 >
 </app-species-div>
 
-<app-stat-adjuster [monster]="monster" *ngIf="monster">
-</app-stat-adjuster>
+<app-moves-list *ngIf="moves">
 
-<div class="moves-list-panel" *ngIf="moves">
-    <app-move-div
-        *ngFor="let move of moves"
-        [move]="move">
-    </app-move-div>
-</div> -->
+</app-moves-list>

@@ -2,10 +2,7 @@
 @import 'vars';
 
 :host {
-    display: flex;
-    margin-bottom: 0.25em;
-    align-items: center;
-    height: 20px;
+    display: block;
 }
 
 .base-life {
@@ -26,4 +23,5 @@
 
 .species-base-stat {
     display: flex;
+    flex-direction: column;
 }

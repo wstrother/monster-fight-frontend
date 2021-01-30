@@ -24,3 +24,7 @@
 .species-color {
     @extend %normal-text;
 }
+
+.species-base-stats-panel {
+    @include margin-between(0.5rem);
+}

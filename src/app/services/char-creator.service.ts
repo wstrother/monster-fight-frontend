@@ -84,8 +84,17 @@ export class CharCreatorService {
     this._moves.push(move);
   }
 
+  clearMoves(): void {
+    let l = this._moves.length;
+    for (let i = 0; i < l; i++) {
+      this._moves.pop()
+    }
+  }
+
   setSpecMoves(moves: Move[]) {
     this._specMoveIndex = moves.length;
+    this.clearMoves();
+    console.log(moves);
     moves.forEach((m: Move) => this.addMove(m));
   }
 

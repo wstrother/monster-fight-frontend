@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Monster } from '../models/monster';
-import { Specie } from '../models/specie';
-import { Move } from '../models/move';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+
+import { Monster } from '../models/monster';
+import { Specie } from '../models/specie';
+import { Move } from '../models/move';
 import { MovePool } from '../models/move-pool';
 
 
@@ -13,10 +14,14 @@ import { MovePool } from '../models/move-pool';
 })
 export class MonApiService {
   private baseApiUrl: String = 'http://localhost:5000/';
-  private speciesEnd: string = 'species/';
-  private monsterEnd: string = 'monster/';
-  private newCharEnd: string = 'new_character/';
-  private movesEnd: string = 'moves/';
+  private speciesEnd: string = 'species';
+  private monsterEnd: string = 'monster';
+  private newCharEnd: string = 'new_character';
+  private movesEnd: string = 'moves';
+  
+  constructor(private http: HttpClient) { }
+
+  // API methods
 
   // methods for the 'getSpeciesList' API call
   getSpeciesListUrl(): string {
@@ -70,6 +75,4 @@ export class MonApiService {
       map(data => data.map(data => new Move(data)))
     );
   }
-
-  constructor(private http: HttpClient) { }
 }

@@ -1,0 +1,94 @@
+@import 'mixins';
+
+%form-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    @extend %panel-main;
+}
+
+
+form {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+.form-header {
+    height: auto;
+    align-self: center;
+    @extend %header-text;
+    margin-bottom: 0.5rem;
+}
+
+.form-body {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include margin-between(0.5rem);
+    margin-bottom: 0.5rem;
+}
+
+.form-footer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-item {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+
+    input[type=text], input[type=password] {
+        flex-grow: 2;
+        height: 15px;
+    }
+}
+
+.field-label {
+    text-align: right;
+    width: 150px;
+    color: white;
+    font-weight: bold;
+}
+
+.form-button {
+    @extend %panel-main;
+    @include small-button(130px, auto);
+    cursor:grab;
+
+    &:hover {
+        color: $hl-color;
+        background-color: $hl-brighten;
+    }
+
+    &:active {
+        transform: translate(2px, 2px);
+    }
+}
+
+.flash-message {
+    padding-top: 10px;
+    height: 30px;
+    font-weight: bold;
+}
+
+.flash-waiting {
+    color: rgb(186, 186, 233);
+}
+
+.flash-success {
+    color: rgb(182, 197, 182);
+}
+
+.flash-error {
+    color: rgb(241, 191, 191);
+}

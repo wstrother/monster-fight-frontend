@@ -1,0 +1,20 @@
+<form>
+    <div class="form-header">Log In</div>
+
+    <div class="form-body">
+        <div class="form-item">
+            <label for="username" class="field-label">Username: </label>
+            <input type="text"  [(ngModel)]="username" name="username" />
+        </div>
+
+        <div class="form-item">
+            <label for="password" class="field-label">Password:</label>
+            <input type="password" [(ngModel)]="password" name="password" />
+        </div>
+    </div>
+        
+    <div class="form-footer">
+        <input type="submit" class="form-button" (click)=submit() value="Log In!"/>
+        <div class="flash-message {{ flashClass }}">{{ flash }}</div>
+    </div>
+</form>

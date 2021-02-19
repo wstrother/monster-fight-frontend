@@ -1,0 +1,10 @@
+@import 'mixins';
+
+.user-forms {
+    display: flex;
+    justify-content: space-between;
+
+    &>* {
+        width: 45%;
+    }
+}

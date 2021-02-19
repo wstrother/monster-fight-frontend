@@ -16,7 +16,7 @@
 }
 
 .ui-button {
-    @include small-button(20px);
+    @include small-button();
     margin: 5px;
 
     &:hover {

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,8 @@ import { MovesComponent } from './pages/moves/moves.component';
 import { MovesListComponent } from './components/moves-list/moves-list.component';
 import { MoveListUiComponent } from './components/move-list-ui/move-list-ui.component';
 import { MovesAdjusterComponent } from './components/moves-adjuster/moves-adjuster.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -39,12 +42,15 @@ import { MovesAdjusterComponent } from './components/moves-adjuster/moves-adjust
     MovesComponent,
     MovesListComponent,
     MoveListUiComponent,
-    MovesAdjusterComponent
+    MovesAdjusterComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

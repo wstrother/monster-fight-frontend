@@ -2,7 +2,7 @@
 @import 'vars';
 
 :host {
-    @include small-button(20px);
+    @include small-button();
 }
 
 .die-value {

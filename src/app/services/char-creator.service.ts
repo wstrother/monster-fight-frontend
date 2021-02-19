@@ -94,15 +94,12 @@ export class CharCreatorService {
   setSpecMoves(moves: Move[]) {
     this._specMoveIndex = moves.length;
     this.clearMoves();
-    console.log(moves);
     moves.forEach((m: Move) => this.addMove(m));
   }
 
   handleMoveSlot(move: Move, slot: number) {
     let index = this._specMoveIndex + (slot - 1);
     this._moves[index] = move;
-
-    console.log(this._moves);
   }
 
   getMoveList(): Move[] {

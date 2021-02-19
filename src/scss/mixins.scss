@@ -117,7 +117,7 @@ $game-font: 'Press Start 2P', 'Courier New', 'mono';
     }
 }
 
-$dv-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15;
+$dv-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20;
 @each $dv-value in $dv-values {
     .stat-dv-#{$dv-value} {
         @include dv-meter($dv-value);
@@ -140,15 +140,17 @@ $dv-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15;
   @extend %ui-highlight;
 }
 
-@mixin small-button($size) {
+$small-button-size: 20px;
+
+@mixin small-button($width: $small-button-size, $height: $small-button-size) {
   @extend %panel-shadow;
   @extend %small-text;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: default;
-  width: $size;
-  height: $size;
-  border-radius: 20%;
+  width: $width;
+  height: $height;
+  border-radius: 5px;
   -webkit-user-select: none;
 }

@@ -4,3 +4,6 @@
     <li routerLinkActive="active"><a routerLink="/stats">stats</a></li>
     <li routerLinkActive="active"><a routerLink="/moves">moves</a></li>
 </ul>
+<p *ngIf="user">
+    Welcome, {{ user.username }}! <a (click)="logout()" >Log Out</a>
+</p>
